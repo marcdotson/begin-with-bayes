@@ -1,0 +1,96 @@
+---
+title: "Begin With Bayes: Assessing a Probabilistic and Decision Theoretic Approach to Statistics and Machine Learning Instruction"
+author: 
+  - name: "Marc Dotson"
+    affiliation: "Utah State University"
+    email: "marc.dotson@usu.edu"
+  - name: "Reagan Siggard"
+    affiliation: "Utah State University"
+    email: "reagan.siggard@usu.edu"
+  - name: "Tyler Brough"
+    affiliation: "Utah State University"
+    email: "tyler.brough@usu.edu"
+date: "April 9, 2026"
+abstract: | 
+  The framing and depth of statistics and machine learning instruction varies widely. These differences rightly depend on the specifics of the field in which statistics and machine learning is applied, aligning instruction and existing student understanding. However, in settings where students don't have a common application, statistics and machine learning instruction and existing student understanding can be misaligned. In this paper, we propose using probability and decision theory as a general, unifying approach to statistics and machine learning instruction. We evaluate the impact of this approach on business school student understanding in an interdiscplinary setting.
+keywords:
+  - "Pedagogy"
+  - "Probabilistic Machine Learning"
+  - "Statistics Instruction"
+  - "Machine Learning Instruction"
+  - "Bayesian Inference"
+  - "Probability"
+  - "Decision Theory"
+bibliography: references.bib
+format: 
+  jasa-pdf: 
+    keep-tex: true
+    cite-method: natbib
+    journal:
+      blinded: false
+execute:
+  echo: false
+---
+
+```{python}
+#| label: setup
+#| warning: false
+#| message: false
+
+import os
+import polars as pl
+import seaborn.objects as so
+```
+
+## Introduction {#sec-intro}
+
+The framing and depth of statistics and machine learning instruction varies widely. These differences rightly depend on the specifics of the field in which statistics and machine learning is applied, aligning instruction and existing student understanding. However, in settings where students don't have a common application, statistics and machine learning instruction and existing student understanding can be misaligned. In this paper, we propose using probability and decision theory as a general, unifying approach to statistics and machine learning instruction. We evaluate the impact of this approach on business school student understanding in an interdiscplinary setting.
+
+### Decision Theory
+
+Decision theory is a principled, unifying framework for informing decision making in the presence of uncertainty. While we can and should provide a variety of business “cases” to illustrate applications, we can’t cover every possible application. Decision theory facilitates the generalization of a principled approach to any kind of application. It also helps embed data analysts in the details of the business problem so they can better communicate the implications of their analysis to the decision makers. Decision theory is clearly not used in every discipline, but it can be used in every discipline. This framework can both help differentiate our students and improve the practice of data analytics.
+
+To illustrate how decision theory can be used, let’s consider a canonical marketing application of deciding on how to set optimal prices. In the presence of uncertainty about heterogeneity in consumer preferences and price sensitivity, businesses actively price discriminate through targeted promotional offers (e.g., coupons). As a data analyst communicates with domain experts to understand the problem and how to inform the decision, a decision theoretic approach requires specifying an objective function that is consistent with the problem and captures the risk aversion of the decision maker. For this problem, a simple customer-specific profit function suffices:
+
+$$
+\pi(p) = Y(p) \times (p – mc)
+$$
+
+where p is the personalized price for the given customer, Y(p) is the predicted demand for the given customer, and mc is the marginal cost. In decision theory, the objective function is typically a loss function. We can identify an optimal decision, conditioned on the specification of the objective function, by minimizing the loss function or equivalently, as we have here, maximizing a utility or profit function.
+
+After working with domain experts to specify an objective function, we quantify uncertainty about heterogeneity in consumer preferences and price sensitivity by modeling demand. As with any modeling application, we end up comparing models. Instead of comparing models using in-sample fit or even out-of-sample, predictive fit – with decision theory, we compare models based on the specified objective function that directly relates to the decision we’re trying to inform. This decision theoretic approach, which can similarly be used to inform the choice of estimators in an analysis, can result in the selection of models (and estimators) that differ widely from those that would be selected using a purely statistical approach.
+
+For more details on this example, see Smith et al.’s Optimal Price Targeting paper in Marketing Science.
+
+### Probability
+
+A probabilistic approach to machine learning enhances the principled, unifying framework provided by decision theory. This includes Bayesian statistics, where we treat all unknowns as random variables and can directly use probability distributions to quantify uncertainty in our estimates, and frequentist statistics, where we treat data as random and indirectly use probability distributions to quantify uncertainty in our estimates. The direct, Bayesian approach is arguably more intuitive, especially for applied students, while the indirect, frequentist approach is less computationally intensive. The hope is that introducing them in contrast and as complements will enhance student understanding of modeling generally and combat the problem of student overfitting to a set list of procedures.
+
+For more details on this approach, see Kevin Murphy’s Probabilistic Machine Learning: An Introduction and Probabilistic Machine Learning: Advanced Topics.
+
+## Study {#sec-study}
+
+In this study, we seek to measure the impact of employing an approach to machine learning instruction tailored to applied and interdisciplinary students. Specifically, we are interested in exploring whether a probabilistic and decision theoretic approach to machine learning improves business student understanding of and confidence in using machine learning in practice. By evaluating student understanding of learning objectives this semester as a baseline, we hope to assess the impact of changes to our approach in subsequent semesters.
+
+### Steps
+
+1. The students will receive the invitation to participate in the research via the Recruiting Announcement on their Canvas course. (Reagan Siggard will post this in the in person and online course.)
+2. The students will or will not complete the informed consent that is housed on Reagan Siggard's Qualtrics Survey account.
+3. Students who do or do not participate in the study will complete the pre-class survey.
+4. Students who do or do not participate in the study will complete the post-class survey.
+5. The Qualtrics survey will be housed within Reagan's Qualtrics account so the PI is unable to view who consented to the survey. 6. Reagan will compile the list of students who participated and those who chose the alternative extra credit assignment. Reagan will share this list with the course instructors at the end of the semester. It will not be distinguishable as to which students participated in the research and who chose the alternative option. The instructors will then add the extra credit.
+7. After the class has concluded, all data from the pre and post survey will be downloaded (identifiable), and those students who opted out of the study responses will be removed.
+8. After the class has concluded, only student outcome data (grades, assignments, etc.) of those who participated in the study will be downloaded (identifiable) and uploaded to a USU Box Folder.
+9. We will replace names with a pseudonym and a-numbers will be removed from the survey data.
+10. The research team will store all data in a USU Box folder only shared amongst the research team.
+
+## Results {#sec-results}
+
+Our tables and figures can be dynamically generated.
+
+## Conclusion {#sec-concl}
+
+One final note. While the bibliography will be placed automatically at the end of the paper, we may have a few additional citations like R packages and other software to include that aren't explicitly cited elsewhere that we can include using the LaTeX syntax `\nocite{author:year, author:year}` (since we are using `natbib` for citations) as is demonstrated in the following bibliography.
+
+\nocite{bayesm:2018, loo:2018}
+

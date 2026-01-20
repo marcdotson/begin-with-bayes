@@ -1,0 +1,378 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+\usepackage[]{natbib}
+\bibliographystyle{agsm}
+
+
+\addtolength{\oddsidemargin}{-.5in}%
+\addtolength{\evensidemargin}{-1in}%
+\addtolength{\textwidth}{1in}%
+\addtolength{\textheight}{1.7in}%
+\addtolength{\topmargin}{-1in}%
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Begin With Bayes: Assessing a Probabilistic and Decision Theoretic Approach to Statistics and Machine Learning Instruction},
+  pdfauthor={Marc Dotson; Reagan Siggard; Tyler Brough},
+  pdfkeywords={Pedagogy, Probabilistic Machine Learning, Statistics
+Instruction, Machine Learning Instruction, Bayesian
+Inference, Probability, Decision Theory},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+
+\begin{document}
+
+
+\def\spacingset#1{\renewcommand{\baselinestretch}%
+{#1}\small\normalsize} \spacingset{1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\date{April 9, 2026}
+\title{\bf Begin With Bayes: Assessing a Probabilistic and Decision
+Theoretic Approach to Statistics and Machine Learning Instruction}
+\author{
+Marc Dotson\\
+Utah State University\\
+and\\Reagan Siggard\\
+Utah State University\\
+and\\Tyler Brough\\
+Utah State University\\
+}
+\maketitle
+
+\bigskip
+\bigskip
+\begin{abstract}
+The framing and depth of statistics and machine learning instruction
+varies widely. These differences rightly depend on the specifics of the
+field in which statistics and machine learning is applied, aligning
+instruction and existing student understanding. However, in settings
+where students don't have a common application, statistics and machine
+learning instruction and existing student understanding can be
+misaligned. In this paper, we propose using probability and decision
+theory as a general, unifying approach to statistics and machine
+learning instruction. We evaluate the impact of this approach on
+business school student understanding in an interdiscplinary setting.
+\end{abstract}
+
+\noindent%
+{\it Keywords:} Pedagogy, Probabilistic Machine Learning, Statistics
+Instruction, Machine Learning Instruction, Bayesian
+Inference, Probability, Decision Theory
+\vfill
+
+\newpage
+\spacingset{1.9} % DON'T change the spacing!
+
+
+\section{Introduction}\label{sec-intro}
+
+The framing and depth of statistics and machine learning instruction
+varies widely. These differences rightly depend on the specifics of the
+field in which statistics and machine learning is applied, aligning
+instruction and existing student understanding. However, in settings
+where students don't have a common application, statistics and machine
+learning instruction and existing student understanding can be
+misaligned. In this paper, we propose using probability and decision
+theory as a general, unifying approach to statistics and machine
+learning instruction. We evaluate the impact of this approach on
+business school student understanding in an interdiscplinary setting.
+
+\subsection{Decision Theory}\label{decision-theory}
+
+Decision theory is a principled, unifying framework for informing
+decision making in the presence of uncertainty. While we can and should
+provide a variety of business ``cases'' to illustrate applications, we
+can't cover every possible application. Decision theory facilitates the
+generalization of a principled approach to any kind of application. It
+also helps embed data analysts in the details of the business problem so
+they can better communicate the implications of their analysis to the
+decision makers. Decision theory is clearly not used in every
+discipline, but it can be used in every discipline. This framework can
+both help differentiate our students and improve the practice of data
+analytics.
+
+To illustrate how decision theory can be used, let's consider a
+canonical marketing application of deciding on how to set optimal
+prices. In the presence of uncertainty about heterogeneity in consumer
+preferences and price sensitivity, businesses actively price
+discriminate through targeted promotional offers (e.g., coupons). As a
+data analyst communicates with domain experts to understand the problem
+and how to inform the decision, a decision theoretic approach requires
+specifying an objective function that is consistent with the problem and
+captures the risk aversion of the decision maker. For this problem, a
+simple customer-specific profit function suffices:
+
+\[
+\pi(p) = Y(p) \times (p – mc)
+\]
+
+where p is the personalized price for the given customer, Y(p) is the
+predicted demand for the given customer, and mc is the marginal cost. In
+decision theory, the objective function is typically a loss function. We
+can identify an optimal decision, conditioned on the specification of
+the objective function, by minimizing the loss function or equivalently,
+as we have here, maximizing a utility or profit function.
+
+After working with domain experts to specify an objective function, we
+quantify uncertainty about heterogeneity in consumer preferences and
+price sensitivity by modeling demand. As with any modeling application,
+we end up comparing models. Instead of comparing models using in-sample
+fit or even out-of-sample, predictive fit -- with decision theory, we
+compare models based on the specified objective function that directly
+relates to the decision we're trying to inform. This decision theoretic
+approach, which can similarly be used to inform the choice of estimators
+in an analysis, can result in the selection of models (and estimators)
+that differ widely from those that would be selected using a purely
+statistical approach.
+
+For more details on this example, see Smith et al.'s Optimal Price
+Targeting paper in Marketing Science.
+
+\subsection{Probability}\label{probability}
+
+A probabilistic approach to machine learning enhances the principled,
+unifying framework provided by decision theory. This includes Bayesian
+statistics, where we treat all unknowns as random variables and can
+directly use probability distributions to quantify uncertainty in our
+estimates, and frequentist statistics, where we treat data as random and
+indirectly use probability distributions to quantify uncertainty in our
+estimates. The direct, Bayesian approach is arguably more intuitive,
+especially for applied students, while the indirect, frequentist
+approach is less computationally intensive. The hope is that introducing
+them in contrast and as complements will enhance student understanding
+of modeling generally and combat the problem of student overfitting to a
+set list of procedures.
+
+For more details on this approach, see Kevin Murphy's Probabilistic
+Machine Learning: An Introduction and Probabilistic Machine Learning:
+Advanced Topics.
+
+\section{Study}\label{sec-study}
+
+In this study, we seek to measure the impact of employing an approach to
+machine learning instruction tailored to applied and interdisciplinary
+students. Specifically, we are interested in exploring whether a
+probabilistic and decision theoretic approach to machine learning
+improves business student understanding of and confidence in using
+machine learning in practice. By evaluating student understanding of
+learning objectives this semester as a baseline, we hope to assess the
+impact of changes to our approach in subsequent semesters.
+
+\subsection{Steps}\label{steps}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The students will receive the invitation to participate in the
+  research via the Recruiting Announcement on their Canvas course.
+  (Reagan Siggard will post this in the in person and online course.)
+\item
+  The students will or will not complete the informed consent that is
+  housed on Reagan Siggard's Qualtrics Survey account.
+\item
+  Students who do or do not participate in the study will complete the
+  pre-class survey.
+\item
+  Students who do or do not participate in the study will complete the
+  post-class survey.
+\item
+  The Qualtrics survey will be housed within Reagan's Qualtrics account
+  so the PI is unable to view who consented to the survey. 6. Reagan
+  will compile the list of students who participated and those who chose
+  the alternative extra credit assignment. Reagan will share this list
+  with the course instructors at the end of the semester. It will not be
+  distinguishable as to which students participated in the research and
+  who chose the alternative option. The instructors will then add the
+  extra credit.
+\item
+  After the class has concluded, all data from the pre and post survey
+  will be downloaded (identifiable), and those students who opted out of
+  the study responses will be removed.
+\item
+  After the class has concluded, only student outcome data (grades,
+  assignments, etc.) of those who participated in the study will be
+  downloaded (identifiable) and uploaded to a USU Box Folder.
+\item
+  We will replace names with a pseudonym and a-numbers will be removed
+  from the survey data.
+\item
+  The research team will store all data in a USU Box folder only shared
+  amongst the research team.
+\end{enumerate}
+
+\section{Results}\label{sec-results}
+
+Our tables and figures can be dynamically generated.
+
+\section{Conclusion}\label{sec-concl}
+
+One final note. While the bibliography will be placed automatically at
+the end of the paper, we may have a few additional citations like R
+packages and other software to include that aren't explicitly cited
+elsewhere that we can include using the LaTeX syntax
+\texttt{\textbackslash{}nocite\{author:year,\ author:year\}} (since we
+are using \texttt{natbib} for citations) as is demonstrated in the
+following bibliography.
+
+\nocite{bayesm:2018, loo:2018}
+
+
+\bibliography{references.bib}
+
+
+
+\end{document}
