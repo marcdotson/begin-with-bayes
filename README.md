@@ -1,13 +1,17 @@
-# Project Template
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
+# Begin With Bayes: Assessing a Probabilistic and Decision Theoretic Approach to Statistics and Machine Learning Instruction
+
+The framing and depth of statistics and machine learning instruction
+varies widely. These differences rightly depend on the specifics of the
+field in which statistics and machine learning is applied, aligning
+instruction and existing student understanding. However, in settings
+where students don’t have a common application, statistics and machine
+learning instruction and existing student understanding can be
+misaligned. In this paper, we propose using probability and decision
+theory as a general, unifying approach to statistics and machine
+learning instruction. We evaluate the impact of this approach on
+business school student understanding in an interdiscplinary setting.
 
 ## Project Organization
 
@@ -32,4 +36,4 @@ and run `uv run` to create the `/.venv` project library and install the
 specified Python and library versions.
 
 For more details on using Python, Positron, GitHub, Quarto, etc. see the
-recommended [Data Stack](https://github.com/marcdotson/data-stack).
+recommended [data stack](https://github.com/marcdotson/data-stack).
