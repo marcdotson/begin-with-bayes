@@ -76,15 +76,26 @@ In this study, we seek to measure the impact of employing an approach to machine
 
 ### Steps
 
+#### Collecting Data
+
 1. The students will receive the invitation to participate in the research via the Recruiting Announcement on their Canvas course. (Reagan Siggard will post this in the in person and online course.)
 2. The students will or will not complete the informed consent that is housed on Reagan Siggard's Qualtrics Survey account.
 3. Students who do or do not participate in the study will complete the pre-class survey.
 4. Students who do or do not participate in the study will complete the post-class survey.
-5. The Qualtrics survey will be housed within Reagan's Qualtrics account so the PI is unable to view who consented to the survey. 6. Reagan will compile the list of students who participated and those who chose the alternative extra credit assignment. Reagan will share this list with the course instructors at the end of the semester. It will not be distinguishable as to which students participated in the research and who chose the alternative option. The instructors will then add the extra credit.
+5. The Qualtrics survey will be housed within Reagan's Qualtrics account so the PI is unable to view who consented to the survey.
+6. Reagan will compile the list of students who participated and those who chose the alternative extra credit assignment. Reagan will share this list with the course instructors at the end of the semester. It will not be distinguishable as to which students participated in the research and who chose the alternative option. The instructors will then add the extra credit.
 7. After the class has concluded, all data from the pre and post survey will be downloaded (identifiable), and those students who opted out of the study responses will be removed.
 8. After the class has concluded, only student outcome data (grades, assignments, etc.) of those who participated in the study will be downloaded (identifiable) and uploaded to a USU Box Folder.
 9. We will replace names with a pseudonym and a-numbers will be removed from the survey data.
 10. The research team will store all data in a USU Box folder only shared amongst the research team.
+
+#### Evaluating Responses
+
+1. Reagan will provide only the open-ended student responses to the other members of the research team to evaluate. The order of the responses will be randomized.
+2. The research team will evaluate the open-ended responses using the same rating scale that students use to evaluate their confidence that they understand the concepts.
+3. The research team will also utilize AI to do the same evaluation.
+4. The research team evaluations will be averaged (and possibly including the AI evaluation).
+5. We will compare the pre and post survey response evaluations between and across semesters for both the research team and the student self-evaluations.
 
 ### Questions
 
