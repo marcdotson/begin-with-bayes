@@ -347,13 +347,13 @@ impact of changes to our approach in subsequent semesters.
   research and who chose the alternative option. The instructors will
   then add the extra credit.
 \item
-  After the class has concluded, all data from the pre and post survey
+  After the class has concluded, all data from the pre- and post-survey
   will be downloaded (identifiable), and those students who opted out of
   the study responses will be removed.
 \item
   After the class has concluded, only student outcome data (grades,
   assignments, etc.) of those who participated in the study will be
-  downloaded (identifiable) and uploaded to a USU Box Folder.
+  downloaded (identifiable) and uploaded to a USU Box folder.
 \item
   We will replace names with a pseudonym and a-numbers will be removed
   from the survey data.
@@ -368,22 +368,42 @@ impact of changes to our approach in subsequent semesters.
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Reagan will provide only the open-ended student responses to the other
-  members of the research team to evaluate. The order of the responses
-  will be randomized.
+  Download the pre- and post-survey data (Spring 2025 and Fall 2025) and
+  flag the students who \emph{opted into} the study.
 \item
-  The research team will evaluate the open-ended responses using the
-  same rating scale that students use to evaluate their confidence that
-  they understand the concepts.
+  Create a dataset combining the responses from both the pre- and
+  post-surveys from both semesters where each row contains a student
+  rating and open-ended response to one of the seven research questions
+  from either the pre- or post-survey and the columns are the student
+  ID, the semester they took the class, whether the response is from the
+  pre- or post-survey, the flag for students who opted into the study,
+  any demographic information (e.g., major, age, gender), the research
+  question ID, the student rating of their confidence in understanding
+  the concept associated with the research question, and the open-ended
+  response to the research question.
 \item
-  The research team will also utilize AI to do the same evaluation.
+  Randomize the order of the observations \emph{within} each research
+  question and generate a column of randomized, anonymous identifiers.
+  Create a blinded dataset for evaluation by selecting only the
+  anonymous identifier, the research question ID, and the open-ended
+  response to the research question. Evaluators of the resulting dataset
+  are blind to the student, the semester they took the class, whether
+  the open-ended response is from the pre- or post-survey, whether the
+  student opted into the study, and any demographic information.
 \item
-  The research team evaluations will be averaged (and possibly including
-  the AI evaluation).
+  Evaluators will rate the open-ended responses using the same rating
+  scale that students used to evaluate their confidence that they
+  understand the concepts. They will also utilize AI to replicate the
+  same evaluation.
 \item
-  We will compare the pre and post survey response evaluations between
-  and across semesters for both the research team and the student
-  self-evaluations.
+  Evaluator (and AI) ratings will be joined back to the original dataset
+  using the anonymous identifer where they can be averaged, contrasted,
+  and compared between semesters, pre- and post-survey responses, by
+  overall and study participation, and using demographics.
+\item
+  Remove pre- and post-survey data for any students who \emph{didn't opt
+  into} the study, download their outcome data (grades, assignments,
+  etc.), and store in a USU Box folder.
 \end{enumerate}
 
 \subsection{Questions}\label{questions}
