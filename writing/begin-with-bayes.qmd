@@ -12,7 +12,7 @@ author:
     email: "tyler.brough@usu.edu"
 date: "April 9, 2026"
 abstract: | 
-  The framing and depth of statistics and machine learning instruction varies widely. These differences rightly depend on the specifics of the field in which statistics and machine learning is applied, aligning instruction and existing student understanding. However, in settings where students don't have a common application, statistics and machine learning instruction and existing student understanding can be misaligned. In this paper, we propose using probability and decision theory as a general, unifying approach to statistics and machine learning instruction. We evaluate the impact of this approach on business school student understanding in an interdiscplinary setting.
+  The framing and depth of statistics and machine learning instruction varies widely. These differences rightly depend on the specifics of the field in which statistics and machine learning is applied, aligning instruction and existing student understanding. However, in settings where students don't have a common application, statistics and machine learning instruction and existing student understanding can be misaligned. In this paper, we propose using probability and decision theory as a general, unifying perspective to statistics and machine learning instruction. We evaluate the impact of this approach on business school student understanding in an interdiscplinary setting.
 keywords:
   - "Pedagogy"
   - "Probabilistic Machine Learning"
@@ -44,9 +44,7 @@ import seaborn.objects as so
 
 ## Introduction {#sec-intro}
 
-The framing and depth of statistics and machine learning instruction varies widely. These differences rightly depend on the specifics of the field in which statistics and machine learning is applied, aligning instruction and existing student understanding. However, in settings where students don't have a common application, statistics and machine learning instruction and existing student understanding can be misaligned. In this paper, we propose using probability and decision theory as a general, unifying approach to statistics and machine learning instruction. We evaluate the impact of this approach on business school student understanding in an interdiscplinary setting.
-
-The question we want to answer is: Does a probabilistic and decision theoretic approach to machine learning improve business student understanding of and confidence in using these tools in practice?
+Statistics and machine learning instruction varies in technical depth conditional on the departmental home of the course, the discipline of the instructor, and the needs of the students. This variation has proliferated with the advent of data science, business intelligence, and other jobs. Statistics and machine learning instruction also varies in framing. Though less of a consideration than depth and often assumed away or made implicit, framing statistics and machine learning with descriptive, predictive, computational, inferential, or other perspectives can have a significant impact on student understanding and confidence in using these tools in practice, particularly in applied disciplines. In this paper, we propose using decision theory and probability as a general, unifying perspective for statistics and machine learning instruction. We evaluate the impact of this approach on business school student understanding in an interdiscplinary setting.
 
 ### Decision Theory
 
@@ -66,7 +64,7 @@ For more details on this example, see Smith et al.’s Optimal Price Targeting p
 
 ### Probability
 
-A probabilistic approach to machine learning enhances the principled, unifying framework provided by decision theory. This includes Bayesian statistics, where we treat all unknowns as random variables and can directly use probability distributions to quantify uncertainty in our estimates, and frequentist statistics, where we treat data as random and indirectly use probability distributions to quantify uncertainty in our estimates. The direct, Bayesian approach is arguably more intuitive, especially for applied students, while the indirect, frequentist approach is less computationally intensive. The hope is that introducing them in contrast and as complements will enhance student understanding of modeling generally and combat the problem of student overfitting to a set list of procedures.
+A probabilistic approach to machine learning enhances the principled, unifying framework provided by decision theory. Using probability in association with decision theory naturally leads to Bayesian statistics, where we treat all unknowns as random variables and can directly use probability distributions to quantify uncertainty in our estimates, and frequentist statistics, where we treat data as random and indirectly use probability distributions to quantify uncertainty in our estimates. The direct, Bayesian approach is arguably more intuitive, especially for applied students, while the indirect, frequentist approach is less computationally intensive. The hope is that introducing them in contrast and as complements will enhance student understanding of modeling generally and combat the problem of student overfitting to a set list of procedures.
 
 For more details on this approach, see Kevin Murphy’s Probabilistic Machine Learning: An Introduction and Probabilistic Machine Learning: Advanced Topics.
 
