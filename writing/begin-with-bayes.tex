@@ -65,6 +65,7 @@
 
 
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -156,11 +157,11 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Begin With Bayes: Assessing a Probabilistic and Decision Theoretic Approach to Statistics and Machine Learning Instruction},
+  pdftitle={Begin With Bayes: Assessing a Decision Theoretic and Probabilistic Approach to Statistics and Machine Learning Instruction},
   pdfauthor={Marc Dotson; Reagan Siggard; Tyler Brough},
-  pdfkeywords={Pedagogy, Probabilistic Machine Learning, Statistics
-Instruction, Machine Learning Instruction, Bayesian
-Inference, Probability, Decision Theory},
+  pdfkeywords={Bayesian Inference, Decision Theory, Machine Learning
+Instruction, Pedagogy, Probabilistic Machine
+Learning, Probability, Statistics Instruction},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -179,9 +180,9 @@ Inference, Probability, Decision Theory},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\date{April 9, 2026}
-\title{\bf Begin With Bayes: Assessing a Probabilistic and Decision
-Theoretic Approach to Statistics and Machine Learning Instruction}
+\date{July 31, 2026}
+\title{\bf Begin With Bayes: Assessing a Decision Theoretic and
+Probabilistic Approach to Statistics and Machine Learning Instruction}
 \author{
 Marc Dotson\\
 Utah State University\\
@@ -201,16 +202,17 @@ field in which statistics and machine learning is applied, aligning
 instruction and existing student understanding. However, in settings
 where students don't have a common application, statistics and machine
 learning instruction and existing student understanding can be
-misaligned. In this paper, we propose using probability and decision
-theory as a general, unifying perspective to statistics and machine
+misaligned. In this paper, we propose using decision theory and
+probability as a general, unifying perspective to statistics and machine
 learning instruction. We evaluate the impact of this approach on
-business school student understanding in an interdiscplinary setting.
+business school student confidence and understanding in an
+interdiscplinary setting.
 \end{abstract}
 
 \noindent%
-{\it Keywords:} Pedagogy, Probabilistic Machine Learning, Statistics
-Instruction, Machine Learning Instruction, Bayesian
-Inference, Probability, Decision Theory
+{\it Keywords:} Bayesian Inference, Decision Theory, Machine Learning
+Instruction, Pedagogy, Probabilistic Machine
+Learning, Probability, Statistics Instruction
 \vfill
 
 \newpage
@@ -232,21 +234,22 @@ confidence in using these tools in practice, particularly in applied
 disciplines. In this paper, we propose using decision theory and
 probability as a general, unifying perspective for statistics and
 machine learning instruction. We evaluate the impact of this approach on
-business school student understanding in an interdiscplinary setting.
+business school student confidence and understanding in an
+interdiscplinary setting.
 
 \subsection{Decision Theory}\label{decision-theory}
 
-Decision theory is a principled, unifying framework for informing
-decision making in the presence of uncertainty. While we can and should
-provide a variety of business ``cases'' to illustrate applications, we
-can't cover every possible application. Decision theory facilitates the
-generalization of a principled approach to any kind of application. It
-also helps embed data analysts in the details of the business problem so
-they can better communicate the implications of their analysis to the
-decision makers. Decision theory is clearly not used in every
-discipline, but it can be used in every discipline. This framework can
-both help differentiate our students and improve the practice of data
-analytics.
+Decision theory is a principled, unifying framework for decision making
+under uncertainty. While we can and should provide a variety of business
+``cases'' to illustrate applications, we can't cover every possible
+application. Decision theory facilitates the generalization of a
+principled approach to any kind of application. It also helps embed data
+analysts in the details of the business problem so they can better
+communicate the implications of their analysis to the decision makers.
+Decision theory is clearly not used in every discipline, but it
+\emph{can} be used in every discipline. This framework can both help
+differentiate our students and improve the practice of data analytics
+and machine learning.
 
 To illustrate how decision theory can be used, let's consider a
 canonical marketing application of deciding on how to set optimal
@@ -263,27 +266,31 @@ simple customer-specific profit function suffices:
 \pi(p) = Y(p) \times (p – mc)
 \]
 
-where p is the personalized price for the given customer, Y(p) is the
-predicted demand for the given customer, and mc is the marginal cost. In
-decision theory, the objective function is typically a loss function. We
-can identify an optimal decision, conditioned on the specification of
-the objective function, by minimizing the loss function or equivalently,
-as we have here, maximizing a utility or profit function.
+where \(p\) is the personalized price for the given customer, \(Y(p)\)
+is the predicted demand for the given customer, and \(mc\) is the
+marginal cost. In decision theory, the objective function is typically a
+loss function. We can identify an optimal decision, conditioned on the
+specification of the objective function, by minimizing the loss function
+or, as we have here, maximizing a utility or profit function.
 
 After working with domain experts to specify an objective function, we
 quantify uncertainty about heterogeneity in consumer preferences and
-price sensitivity by modeling demand. As with any modeling application,
-we end up comparing models. Instead of comparing models using in-sample
-fit or even out-of-sample, predictive fit -- with decision theory, we
-compare models based on the specified objective function that directly
-relates to the decision we're trying to inform. This decision theoretic
-approach, which can similarly be used to inform the choice of estimators
-in an analysis, can result in the selection of models (and estimators)
-that differ widely from those that would be selected using a purely
-statistical approach.
+price sensitivity by modeling demand. Additionally, as with any modeling
+application, we end up comparing models. Instead of comparing models
+using in-sample fit or even out-of-sample, predictive fit -- with
+decision theory, we compare models based on the specified objective
+function that directly relates to the decision we're trying to inform.
+This decision-theoretic approach results in the selection of models (and
+estimators) that differ widely from those that would be selected using a
+purely statistical approach.
 
-For more details on this example, see Smith et al.'s Optimal Price
-Targeting paper in Marketing Science.
+\begin{itemize}
+\tightlist
+\item
+  See \citet{smith_optimal_2023} for more details on this example.
+\item
+  See \citet{giocoli_wald_2013} for the history of decision theory.
+\end{itemize}
 
 \subsection{Probability}\label{probability}
 
@@ -291,19 +298,23 @@ A probabilistic approach to machine learning enhances the principled,
 unifying framework provided by decision theory. Using probability in
 association with decision theory naturally leads to Bayesian statistics,
 where we treat all unknowns as random variables and can directly use
-probability distributions to quantify uncertainty in our estimates, and
-frequentist statistics, where we treat data as random and indirectly use
-probability distributions to quantify uncertainty in our estimates. The
-direct, Bayesian approach is arguably more intuitive, especially for
-applied students, while the indirect, frequentist approach is less
-computationally intensive. The hope is that introducing them in contrast
-and as complements will enhance student understanding of modeling
-generally and combat the problem of student overfitting to a set list of
-procedures.
+probability distributions to quantify uncertainty in our estimates. We
+can also employ frequentist statistics, where we treat data as random
+and indirectly use probability distributions to quantify uncertainty in
+our estimates, but it is best understood as an approximation to the full
+probabilistic, Bayesian approach. The direct, Bayesian approach is
+arguably more intuitive, especially for applied students, while the
+indirect, frequentist approach is less computationally intensive. The
+hope is that introducing them in contrast and as complements will
+enhance student understanding of modeling generally and combat the
+problem of student overfitting to a set list of procedures.
 
-For more details on this approach, see Kevin Murphy's Probabilistic
-Machine Learning: An Introduction and Probabilistic Machine Learning:
-Advanced Topics.
+\begin{itemize}
+\tightlist
+\item
+  See \citet{murphy_probabilistic_2022} for more details on this
+  approach.
+\end{itemize}
 
 \section{Study}\label{sec-study}
 
@@ -366,7 +377,6 @@ impact of changes to our approach in subsequent semesters.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Download the pre- and post-survey data (Spring 2025 and Fall 2025) and
   flag the students who \emph{opted into} the study.
@@ -394,7 +404,19 @@ impact of changes to our approach in subsequent semesters.
   Evaluators will rate the open-ended responses using the same rating
   scale that students used to evaluate their confidence that they
   understand the concepts. They will also utilize AI to replicate the
-  same evaluation.
+  same evaluation. Specifically, evalutors will rate how well the
+  response indicates the student understands the concept associated with
+  the question:
+\item
+  No Understanding
+\item
+  Slight Understanding
+\item
+  Some Understanding
+\item
+  Fair Understanding
+\item
+  Complete Understanding
 \item
   Evaluator (and AI) ratings will be joined back to the original dataset
   using the anonymous identifer where they can be averaged, contrasted,

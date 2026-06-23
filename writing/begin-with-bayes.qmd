@@ -1,5 +1,5 @@
 ---
-title: "Begin With Bayes: Assessing a Probabilistic and Decision Theoretic Approach to Statistics and Machine Learning Instruction"
+title: "Begin With Bayes: Assessing a Decision Theoretic and Probabilistic Approach to Statistics and Machine Learning Instruction"
 author: 
   - name: "Marc Dotson"
     affiliation: "Utah State University"
@@ -10,17 +10,17 @@ author:
   - name: "Tyler Brough"
     affiliation: "Utah State University"
     email: "tyler.brough@usu.edu"
-date: "April 9, 2026"
+date: "July 31, 2026"
 abstract: | 
-  The framing and depth of statistics and machine learning instruction varies widely. These differences rightly depend on the specifics of the field in which statistics and machine learning is applied, aligning instruction and existing student understanding. However, in settings where students don't have a common application, statistics and machine learning instruction and existing student understanding can be misaligned. In this paper, we propose using probability and decision theory as a general, unifying perspective to statistics and machine learning instruction. We evaluate the impact of this approach on business school student understanding in an interdiscplinary setting.
+  The framing and depth of statistics and machine learning instruction varies widely. These differences rightly depend on the specifics of the field in which statistics and machine learning is applied, aligning instruction and existing student understanding. However, in settings where students don't have a common application, statistics and machine learning instruction and existing student understanding can be misaligned. In this paper, we propose using decision theory and probability as a general, unifying perspective to statistics and machine learning instruction. We evaluate the impact of this approach on business school student confidence and understanding in an interdiscplinary setting.
 keywords:
+  - "Bayesian Inference"
+  - "Decision Theory"
+  - "Machine Learning Instruction"
   - "Pedagogy"
   - "Probabilistic Machine Learning"
-  - "Statistics Instruction"
-  - "Machine Learning Instruction"
-  - "Bayesian Inference"
   - "Probability"
-  - "Decision Theory"
+  - "Statistics Instruction"
 bibliography: references.bib
 format: 
   jasa-pdf: 
@@ -32,23 +32,13 @@ execute:
   echo: false
 ---
 
-```{python}
-#| label: setup
-#| warning: false
-#| message: false
-
-import os
-import polars as pl
-import seaborn.objects as so
-```
-
 ## Introduction {#sec-intro}
 
-Statistics and machine learning instruction varies in technical depth conditional on the departmental home of the course, the discipline of the instructor, and the needs of the students. This variation has proliferated with the advent of data science, business intelligence, and other jobs. Statistics and machine learning instruction also varies in framing. Though less of a consideration than depth and often assumed away or made implicit, framing statistics and machine learning with descriptive, predictive, computational, inferential, or other perspectives can have a significant impact on student understanding and confidence in using these tools in practice, particularly in applied disciplines. In this paper, we propose using decision theory and probability as a general, unifying perspective for statistics and machine learning instruction. We evaluate the impact of this approach on business school student understanding in an interdiscplinary setting.
+Statistics and machine learning instruction varies in technical depth conditional on the departmental home of the course, the discipline of the instructor, and the needs of the students. This variation has proliferated with the advent of data science, business intelligence, and other jobs. Statistics and machine learning instruction also varies in framing. Though less of a consideration than depth and often assumed away or made implicit, framing statistics and machine learning with descriptive, predictive, computational, inferential, or other perspectives can have a significant impact on student understanding and confidence in using these tools in practice, particularly in applied disciplines. In this paper, we propose using decision theory and probability as a general, unifying perspective for statistics and machine learning instruction. We evaluate the impact of this approach on business school student confidence and understanding in an interdiscplinary setting.
 
 ### Decision Theory
 
-Decision theory is a principled, unifying framework for informing decision making in the presence of uncertainty. While we can and should provide a variety of business “cases” to illustrate applications, we can’t cover every possible application. Decision theory facilitates the generalization of a principled approach to any kind of application. It also helps embed data analysts in the details of the business problem so they can better communicate the implications of their analysis to the decision makers. Decision theory is clearly not used in every discipline, but it can be used in every discipline. This framework can both help differentiate our students and improve the practice of data analytics.
+Decision theory is a principled, unifying framework for decision making under uncertainty. While we can and should provide a variety of business "cases" to illustrate applications, we can't cover every possible application. Decision theory facilitates the generalization of a principled approach to any kind of application. It also helps embed data analysts in the details of the business problem so they can better communicate the implications of their analysis to the decision makers. While computer science and statistics have long been seen as central to the field of machine learning, decision theory brings economics squarely into the fold. While decision theory is clearly not used in every discipline, it *can* be used in every discipline and provides the heart of the automated feedback loop in reinforcement learning. This framework can both help differentiate our students and improve the practice of data analytics and machine learning and emphasize the importance of keeping a human in the loop as part of any decision-making process.
 
 To illustrate how decision theory can be used, let’s consider a canonical marketing application of deciding on how to set optimal prices. In the presence of uncertainty about heterogeneity in consumer preferences and price sensitivity, businesses actively price discriminate through targeted promotional offers (e.g., coupons). As a data analyst communicates with domain experts to understand the problem and how to inform the decision, a decision theoretic approach requires specifying an objective function that is consistent with the problem and captures the risk aversion of the decision maker. For this problem, a simple customer-specific profit function suffices:
 
@@ -56,17 +46,20 @@ $$
 \pi(p) = Y(p) \times (p – mc)
 $$
 
-where p is the personalized price for the given customer, Y(p) is the predicted demand for the given customer, and mc is the marginal cost. In decision theory, the objective function is typically a loss function. We can identify an optimal decision, conditioned on the specification of the objective function, by minimizing the loss function or equivalently, as we have here, maximizing a utility or profit function.
+where $p$ is the personalized price for the given customer, $Y(p)$ is the predicted demand for the given customer, and $mc$ is the marginal cost. In decision theory, the objective function is typically a loss function. We can identify an optimal decision, conditioned on the specification of the objective function, by minimizing the loss function or, as we have here, maximizing a utility or profit function.
 
-After working with domain experts to specify an objective function, we quantify uncertainty about heterogeneity in consumer preferences and price sensitivity by modeling demand. As with any modeling application, we end up comparing models. Instead of comparing models using in-sample fit or even out-of-sample, predictive fit – with decision theory, we compare models based on the specified objective function that directly relates to the decision we’re trying to inform. This decision theoretic approach, which can similarly be used to inform the choice of estimators in an analysis, can result in the selection of models (and estimators) that differ widely from those that would be selected using a purely statistical approach.
+After working with domain experts to specify an objective function, we quantify uncertainty about heterogeneity in consumer preferences and price sensitivity by modeling demand. Additionally, as with any modeling application, we end up comparing models. Instead of comparing models using in-sample fit or even out-of-sample, predictive fit -- with decision theory, we compare models based on the specified objective function that directly relates to the decision we're trying to inform. This decision-theoretic approach results in the selection of models (and estimators) that differ widely from those that would be selected using a purely statistical approach.
 
-For more details on this example, see Smith et al.’s Optimal Price Targeting paper in Marketing Science.
+- See @smith_optimal_2023 for more details on this example.
+- See @giocoli_wald_2013 for the history of decision theory.
+- See @kennedy_teaching_1998 for an econometric perspective.
 
 ### Probability
 
-A probabilistic approach to machine learning enhances the principled, unifying framework provided by decision theory. Using probability in association with decision theory naturally leads to Bayesian statistics, where we treat all unknowns as random variables and can directly use probability distributions to quantify uncertainty in our estimates, and frequentist statistics, where we treat data as random and indirectly use probability distributions to quantify uncertainty in our estimates. The direct, Bayesian approach is arguably more intuitive, especially for applied students, while the indirect, frequentist approach is less computationally intensive. The hope is that introducing them in contrast and as complements will enhance student understanding of modeling generally and combat the problem of student overfitting to a set list of procedures.
+A probabilistic approach to machine learning enhances the principled, unifying framework provided by decision theory. Using probability in association with decision theory naturally leads to Bayesian statistics, where we treat all unknowns as random variables and can directly use probability distributions to quantify uncertainty in our estimates. We can also employ frequentist statistics, where we treat data as random and indirectly use probability distributions to quantify uncertainty in our estimates, but it is best understood as an approximation to the full probabilistic, Bayesian approach. The direct, Bayesian approach is arguably more intuitive, especially for applied students, while the indirect, frequentist approach is less computationally intensive. The hope is that introducing them in contrast and as complements will enhance student understanding of modeling generally and combat the problem of student overfitting to a set list of procedures.
 
-For more details on this approach, see Kevin Murphy’s Probabilistic Machine Learning: An Introduction and Probabilistic Machine Learning: Advanced Topics.
+- See @murphy_probabilistic_2022 for more details on this approach.
+- See @strumbelj_past_2024 for a discussion on computational tools.
 
 ## Study {#sec-study}
 
@@ -94,11 +87,11 @@ In this study, we seek to measure the impact of employing an approach to machine
 3. Generate a column of randomized, anonymous identifiers and randomize the order of the observations *within* each research question. Create a blinded dataset for evaluation by selecting only the anonymous identifier, the research question ID, and the open-ended response to the research question. Evaluators of the resulting dataset are blind to the student, the semester they took the class, whether the open-ended response is from the pre- or post-survey, whether the student opted into the study, and any demographic information.
 4. Evaluators will rate the open-ended responses using the same rating scale that students used to evaluate their confidence that they understand the concepts. They will also utilize AI to replicate the same evaluation. Specifically, evalutors will rate how well the response indicates the student understands the concept associated with the question:
 
-- No Understanding
-- Slight Understanding
-- Some Understanding
-- Fair Understanding
-- Complete Understanding
+1. No Understanding
+2. Slight Understanding
+3. Some Understanding
+4. Fair Understanding
+5. Complete Understanding
 
 5. Evaluator (and AI) ratings will be joined back to the original dataset using the anonymous identifer where they can be averaged, contrasted, and compared between semesters, pre- and post-survey responses, by overall and study participation, and using demographics.
 6. Remove pre- and post-survey data for any students who *didn't opt into* the study, download their outcome data (grades, assignments, etc.), and store in a USU Box folder.
@@ -122,14 +115,6 @@ In this study, we seek to measure the impact of employing an approach to machine
 - Considering what you know now, what are the most pressing questions you have about using machine learning in practice?
 - Section, major, age, and gender as demographics.
 
-
 ## Results {#sec-results}
 
-Our tables and figures can be dynamically generated.
-
 ## Conclusion {#sec-concl}
-
-One final note. While the bibliography will be placed automatically at the end of the paper, we may have a few additional citations like R packages and other software to include that aren't explicitly cited elsewhere that we can include using the LaTeX syntax `\nocite{author:year, author:year}` (since we are using `natbib` for citations) as is demonstrated in the following bibliography.
-
-\nocite{bayesm:2018, loo:2018}
-
