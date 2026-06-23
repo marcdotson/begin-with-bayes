@@ -246,10 +246,15 @@ application. Decision theory facilitates the generalization of a
 principled approach to any kind of application. It also helps embed data
 analysts in the details of the business problem so they can better
 communicate the implications of their analysis to the decision makers.
-Decision theory is clearly not used in every discipline, but it
-\emph{can} be used in every discipline. This framework can both help
-differentiate our students and improve the practice of data analytics
-and machine learning.
+While computer science and statistics have long been seen as central to
+the field of machine learning, decision theory brings economics squarely
+into the fold. While decision theory is clearly not used in every
+discipline, it \emph{can} be used in every discipline and provides the
+heart of the automated feedback loop in reinforcement learning. This
+framework can both help differentiate our students and improve the
+practice of data analytics and machine learning and emphasize the
+importance of keeping a human in the loop as part of any decision-making
+process.
 
 To illustrate how decision theory can be used, let's consider a
 canonical marketing application of deciding on how to set optimal
@@ -290,6 +295,8 @@ purely statistical approach.
   See \citet{smith_optimal_2023} for more details on this example.
 \item
   See \citet{giocoli_wald_2013} for the history of decision theory.
+\item
+  See \citet{kennedy_teaching_1998} for an econometric perspective.
 \end{itemize}
 
 \subsection{Probability}\label{probability}
@@ -314,6 +321,9 @@ problem of student overfitting to a set list of procedures.
 \item
   See \citet{murphy_probabilistic_2022} for more details on this
   approach.
+\item
+  See \citet{strumbelj_past_2024} for a discussion on computational
+  tools.
 \end{itemize}
 
 \section{Study}\label{sec-study}
@@ -321,11 +331,9 @@ problem of student overfitting to a set list of procedures.
 In this study, we seek to measure the impact of employing an approach to
 machine learning instruction tailored to applied and interdisciplinary
 students. Specifically, we are interested in exploring whether a
-probabilistic and decision theoretic approach to machine learning
-improves business student understanding of and confidence in using
-machine learning in practice. By evaluating student understanding of
-learning objectives this semester as a baseline, we hope to assess the
-impact of changes to our approach in subsequent semesters.
+decision theoretic and probabilistic approach to machine learning
+improves business student confidence in and understanding of using
+machine learning in practice.
 
 \subsection{Steps}\label{steps}
 
@@ -342,11 +350,9 @@ impact of changes to our approach in subsequent semesters.
   The students will or will not complete the informed consent that is
   housed on Reagan Siggard's Qualtrics Survey account.
 \item
-  Students who do or do not participate in the study will complete the
-  pre-class survey.
+  All students will complete the pre-class survey.
 \item
-  Students who do or do not participate in the study will complete the
-  post-class survey.
+  All students will complete the post-class survey.
 \item
   The Qualtrics survey will be housed within Reagan's Qualtrics account
   so the PI is unable to view who consented to the survey.
@@ -377,9 +383,10 @@ impact of changes to our approach in subsequent semesters.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
-  Download the pre- and post-survey data (Spring 2025 and Fall 2025) and
-  flag the students who \emph{opted into} the study.
+  Download the pre- and post-survey data (Spring 2025, Fall 2025, and
+  Spring 2026) and flag the students who \emph{opted into} the study.
 \item
   Create a dataset combining the responses from both the pre- and
   post-surveys from both semesters where each row contains a student
@@ -406,17 +413,9 @@ impact of changes to our approach in subsequent semesters.
   understand the concepts. They will also utilize AI to replicate the
   same evaluation. Specifically, evalutors will rate how well the
   response indicates the student understands the concept associated with
-  the question:
-\item
-  No Understanding
-\item
-  Slight Understanding
-\item
-  Some Understanding
-\item
-  Fair Understanding
-\item
-  Complete Understanding
+  the question using the following scale: 1. No Understanding; 2. Slight
+  Understanding; 3. Some Understanding; 4. Fair Understanding; 5.
+  Complete Understanding.
 \item
   Evaluator (and AI) ratings will be joined back to the original dataset
   using the anonymous identifer where they can be averaged, contrasted,
@@ -479,22 +478,6 @@ impact of changes to our approach in subsequent semesters.
 \item
   Section, major, age, and gender as demographics.
 \end{itemize}
-
-\section{Results}\label{sec-results}
-
-Our tables and figures can be dynamically generated.
-
-\section{Conclusion}\label{sec-concl}
-
-One final note. While the bibliography will be placed automatically at
-the end of the paper, we may have a few additional citations like R
-packages and other software to include that aren't explicitly cited
-elsewhere that we can include using the LaTeX syntax
-\texttt{\textbackslash{}nocite\{author:year,\ author:year\}} (since we
-are using \texttt{natbib} for citations) as is demonstrated in the
-following bibliography.
-
-\nocite{bayesm:2018, loo:2018}
 
 
 \bibliography{references.bib}

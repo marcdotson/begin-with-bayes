@@ -63,7 +63,7 @@ A probabilistic approach to machine learning enhances the principled, unifying f
 
 ## Study {#sec-study}
 
-In this study, we seek to measure the impact of employing an approach to machine learning instruction tailored to applied and interdisciplinary students. Specifically, we are interested in exploring whether a probabilistic and decision theoretic approach to machine learning improves business student understanding of and confidence in using machine learning in practice. By evaluating student understanding of learning objectives this semester as a baseline, we hope to assess the impact of changes to our approach in subsequent semesters.
+In this study, we seek to measure the impact of employing an approach to machine learning instruction tailored to applied and interdisciplinary students. Specifically, we are interested in exploring whether a decision theoretic and probabilistic approach to machine learning improves business student confidence in and understanding of using machine learning in practice.
 
 ### Steps
 
@@ -71,8 +71,8 @@ In this study, we seek to measure the impact of employing an approach to machine
 
 1. The students will receive the invitation to participate in the research via the Recruiting Announcement on their Canvas course. (Reagan Siggard will post this in the in person and online course.)
 2. The students will or will not complete the informed consent that is housed on Reagan Siggard's Qualtrics Survey account.
-3. Students who do or do not participate in the study will complete the pre-class survey.
-4. Students who do or do not participate in the study will complete the post-class survey.
+3. All students will complete the pre-class survey.
+4. All students will complete the post-class survey.
 5. The Qualtrics survey will be housed within Reagan's Qualtrics account so the PI is unable to view who consented to the survey.
 6. Reagan will compile the list of students who participated and those who chose the alternative extra credit assignment. Reagan will share this list with the course instructors at the end of the semester. It will not be distinguishable as to which students participated in the research and who chose the alternative option. The instructors will then add the extra credit.
 7. After the class has concluded, all data from the pre- and post-survey will be downloaded (identifiable), and those students who opted out of the study responses will be removed.
@@ -82,17 +82,10 @@ In this study, we seek to measure the impact of employing an approach to machine
 
 #### Evaluating Responses
 
-1. Download the pre- and post-survey data (Spring 2025 and Fall 2025) and flag the students who *opted into* the study.
+1. Download the pre- and post-survey data (Spring 2025, Fall 2025, and Spring 2026) and flag the students who *opted into* the study.
 2. Create a dataset combining the responses from both the pre- and post-surveys from both semesters where each row contains a student rating and open-ended response to one of the seven research questions from either the pre- or post-survey and the columns are the student ID, the semester they took the class, whether the response is from the pre- or post-survey, the flag for students who opted into the study, any demographic information (e.g., major, age, gender), the research question ID, the student rating of their confidence in understanding the concept associated with the research question, and the open-ended response to the research question.
 3. Generate a column of randomized, anonymous identifiers and randomize the order of the observations *within* each research question. Create a blinded dataset for evaluation by selecting only the anonymous identifier, the research question ID, and the open-ended response to the research question. Evaluators of the resulting dataset are blind to the student, the semester they took the class, whether the open-ended response is from the pre- or post-survey, whether the student opted into the study, and any demographic information.
-4. Evaluators will rate the open-ended responses using the same rating scale that students used to evaluate their confidence that they understand the concepts. They will also utilize AI to replicate the same evaluation. Specifically, evalutors will rate how well the response indicates the student understands the concept associated with the question:
-
-1. No Understanding
-2. Slight Understanding
-3. Some Understanding
-4. Fair Understanding
-5. Complete Understanding
-
+4. Evaluators will rate the open-ended responses using the same rating scale that students used to evaluate their confidence that they understand the concepts. They will also utilize AI to replicate the same evaluation. Specifically, evalutors will rate how well the response indicates the student understands the concept associated with the question using the following scale: 1. No Understanding; 2. Slight Understanding; 3. Some Understanding; 4. Fair Understanding; 5. Complete Understanding.
 5. Evaluator (and AI) ratings will be joined back to the original dataset using the anonymous identifer where they can be averaged, contrasted, and compared between semesters, pre- and post-survey responses, by overall and study participation, and using demographics.
 6. Remove pre- and post-survey data for any students who *didn't opt into* the study, download their outcome data (grades, assignments, etc.), and store in a USU Box folder.
 
@@ -114,7 +107,3 @@ In this study, we seek to measure the impact of employing an approach to machine
 - In your own words, please describe in detail one way in which you would use machine learning to inform a business decision in practice.
 - Considering what you know now, what are the most pressing questions you have about using machine learning in practice?
 - Section, major, age, and gender as demographics.
-
-## Results {#sec-results}
-
-## Conclusion {#sec-concl}
