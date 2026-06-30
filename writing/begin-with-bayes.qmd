@@ -58,8 +58,13 @@ After working with domain experts to specify an objective function, we quantify 
 
 A probabilistic approach to machine learning enhances the principled, unifying framework provided by decision theory. Using probability in association with decision theory naturally leads to Bayesian statistics, where we treat all unknowns as random variables and can directly use probability distributions to quantify uncertainty in our estimates. We can also employ frequentist statistics, where we treat data as random and indirectly use probability distributions to quantify uncertainty in our estimates, but it is best understood as an approximation to the full probabilistic, Bayesian approach. The direct, Bayesian approach is arguably more intuitive, especially for applied students, while the indirect, frequentist approach is less computationally intensive. The hope is that introducing them in contrast and as complements will enhance student understanding of modeling generally and combat the problem of student overfitting to a set list of procedures.
 
+- See @dogucu_current_2022 for the current state of Bayesian education.
 - See @murphy_probabilistic_2022 for more details on this approach.
+- See @dew_probabilistic_2024 for a broader discussion on probability and machine learning.
 - See @strumbelj_past_2024 for a discussion on computational tools.
+- See @petrin-pomerleau_bayesian_2023 for a psychology perspective.
+- See @wang_research_2024 for a case study on teaching Bayesian statistics with R.
+- See @diluvi_structured_2022 for more resources on teaching Bayesian statistics.
 
 ## Study {#sec-study}
 
